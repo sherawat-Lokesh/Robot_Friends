@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import SearchBar from "./searchBar.js";
 import CardList from "./cardList";
-import Scroll from './Scroll.js'
+import Scroll from "./Scroll.js";
+import ErrorBoundry from "./ErrorBoundry";
+
 class App extends Component {
   constructor() {
     super();
@@ -33,7 +35,9 @@ class App extends Component {
         <h1 className="f1">ROBOFRIENDS</h1>
         <SearchBar searchChange={this.onSearchInput} />
         <Scroll>
-          <CardList robot={searchRobot} />
+          <ErrorBoundry>
+            <CardList robot={searchRobot} />
+          </ErrorBoundry>
         </Scroll>
       </div>
     );

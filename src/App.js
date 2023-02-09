@@ -18,7 +18,7 @@ const App = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((json) =>{ setRobot(json)});
-      console.log(robot)
+
   },[]);
 
   const searchRobot = robot.filter((val) => {
